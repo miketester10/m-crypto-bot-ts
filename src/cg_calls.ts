@@ -1,6 +1,6 @@
 import { Markup } from "telegraf";
 import { CoinHandler } from "./shared";
-import { API, MyContext } from "./types/types";
+import { API, Coin, MyContext } from "./types/types";
 import { send_error } from "./errors";
 import axios, { AxiosResponse } from "axios";
 import { CG_CRYPO_DATA } from "./types/cg_crypto_data";
@@ -19,18 +19,19 @@ const get_cg_id = (crypto_symbol: string): string[] => {
   return api_ids;
 };
 
-const get_cg_coin_info = (
-  coin_name: string
-): { name: string; symbol: string } => {
-  let name = "";
+const get_cg_coin_info = (coin_name: string): Coin => {
+  let id = "";
   let symbol = "";
+  let name = "";
+
   for (const crypto of coin_handler.coin_list) {
     if (coin_name === crypto.id) {
-      name = crypto.name;
+      id = crypto.id;
       symbol = crypto.symbol.toUpperCase();
+      name = crypto.name;
     }
   }
-  return { name, symbol };
+  return { id, symbol, name };
 };
 
 const cg_coin_check = async (
