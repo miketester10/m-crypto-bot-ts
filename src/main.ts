@@ -1,3 +1,7 @@
+// npm run dev => run the bot in development mode
+// npm start => run the bot in production mode (E.G. on render.com)
+// for more details see package.json (scr
+
 import { Telegraf } from "telegraf";
 import { callbackQuery } from "telegraf/filters";
 import { CoinHandler } from "./shared";
@@ -7,6 +11,7 @@ import { help, start } from "./info";
 import { send_error } from "./errors";
 import { cg_coin_check, get_cg_chart, get_cg_price } from "./cg_calls";
 import { callback_handler } from "./callback";
+import express from "express";
 dotenv.config();
 
 const coin_handler = CoinHandler.getInstance();
@@ -79,3 +84,7 @@ bot.help(async (ctx) => await help(ctx));
 
 process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
+
+// |------------------ Only for deploy on render.com -----------------------|
+const app = express();
+app.listen(3000, () => console.log("Web server running on port 3000."));

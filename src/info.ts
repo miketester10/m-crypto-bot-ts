@@ -25,7 +25,7 @@ const help = async (ctx: MyContext): Promise<void> => {
     "`/cmckey` - to receive info about CoinMarketCap api key usage\n`(currently not available)`\n" +
     "`/dom` - to receive the top 10 most capitalized tokens\n`(currently not available)`\n" +
     "`/gas` - to receive real-time gas information on ERC\n`(currently not available)`\n" +
-    "`/news` - to receive CoinDesk news~\n`(currently not available)~`\n" +
+    "`/news` - to receive CoinDesk news~\n`(currently not available)`\n" +
     "`/help` - to receive this message\n\n";
 
   await ctx.reply(mk2Formatter(response_text), { parse_mode: "MarkdownV2" });
