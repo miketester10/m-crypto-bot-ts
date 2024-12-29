@@ -6,7 +6,7 @@ const start = async (ctx: MyContext): Promise<void> => {
   const response_text =
     "Hi" +
     (username ? " " + username : "") +
-    "! I am CryptoPrice, You can ask me for the current price of any crypto by typing:\n\n" +
+    "! I am CryptoChartPrice, You can ask me for the current price of any crypto by typing:\n\n" +
     "`/p <crypto_symbol>` \n\n" +
     "For example, `/p btc` will give you the current price of Bitcoin,\n" +
     "or `/c btc` will give you the chart in different timeframes of Bitcoin. Enjoy!\n\n" +
