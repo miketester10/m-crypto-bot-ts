@@ -2,6 +2,7 @@ const mk2Formatter = (text: string): string => {
   const symbols: string[] = [
     "_",
     ">",
+    "<",
     "#",
     "+",
     "-",
@@ -9,6 +10,10 @@ const mk2Formatter = (text: string): string => {
     "|",
     "{",
     "}",
+    "(",
+    ")",
+    "[",
+    "]",
     ".",
     "!",
   ];
