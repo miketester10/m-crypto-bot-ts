@@ -166,7 +166,6 @@ const create_chart = async (
       { "30": "30d" },
       { "90": "90d" },
       { "365": "1y" },
-      { max: "max" },
     ];
 
     const checkbox: string[] = Array(periods.length).fill("");
